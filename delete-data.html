@@ -13,37 +13,46 @@
 </head>
 <body>
 
-<h1>Data Deletion Request</h1>
+<h1>Delete Your Nothi Account and Data</h1>
 <p><strong>App:</strong> Nothi – Notification History<br>
 <strong>Developer:</strong> Eren<br>
 <strong>Contact:</strong> <a href="mailto:nothiapp@gmail.com">nothiapp@gmail.com</a></p>
 
-<h2>Delete Your Data Instantly (On-Device)</h2>
-<p>All notification data is stored locally on your device. You can delete it immediately:</p>
+<p>Nothi saves your notifications on your device. They are uploaded only if you turn on Cloud Sync, which creates a Cloud Sync account linked to your Google account.</p>
 
-<div class="step">1. Open your device <strong>Settings</strong></div>
-<div class="step">2. Go to <strong>Apps</strong> → <strong>Nothi</strong></div>
-<div class="step">3. Tap <strong>Storage</strong> → <strong>Clear Data</strong></div>
-<div class="step">Or simply <strong>uninstall</strong> the app — all data is removed permanently</div>
+<h2>Delete your Cloud Sync account and cloud data</h2>
 
-<h2>Request Deletion via Email</h2>
-<p>If you want us to confirm deletion or have questions, email us at:<br>
-<a href="mailto:nothiapp@gmail.com">nothiapp@gmail.com</a></p>
-<p>We will respond within <strong>7 days</strong>.</p>
+<h3>In the app</h3>
+<div class="step">1. Open Nothi and go to <strong>Settings</strong></div>
+<div class="step">2. In <strong>Cloud Sync</strong>, tap <strong>Delete cloud data &amp; account</strong> and confirm</div>
+<div class="step">3. Choose the Google account you used for Cloud Sync</div>
+<p>This works with or without Premium. Deletion is immediate.</p>
 
-<h2>What Data Is Deleted</h2>
+<h3>Without the app</h3>
+<p>Email <a href="mailto:nothiapp@gmail.com?subject=Delete%20my%20Nothi%20data">nothiapp@gmail.com</a> from the Google account you used, with the subject <strong>"Delete my Nothi data"</strong>. We delete the account and all its synced data within <strong>30 days</strong> and confirm by email.</p>
+
+<h2>Delete data on your device</h2>
+<div class="step">In the app: long-press a notification in the feed, tap <strong>Select all</strong>, then <strong>Delete</strong></div>
+<div class="step">Or: device <strong>Settings → Apps → Nothi → Storage → Clear data</strong></div>
+<div class="step">Or simply <strong>uninstall</strong> the app — all data on the device is removed permanently</div>
+
+<h2>What is deleted</h2>
 <ul>
-  <li>All notification history stored on your device</li>
-  <li>App preferences and settings</li>
-  <li>Purchase status (local cache only — Play Store purchase record remains with Google)</li>
+  <li>All notifications synced to the cloud (Google Firebase Cloud Firestore)</li>
+  <li>Your Cloud Sync account (Firebase Authentication record with your Google account ID and email)</li>
+  <li>On-device deletion: notification history, app preferences and settings</li>
 </ul>
+<p>Nothing from the deleted Cloud Sync account is kept afterwards.</p>
 
-<h2>What Is Not Deleted</h2>
+<h2>What is not deleted</h2>
 <ul>
-  <li>Anonymized crash reports already sent to Firebase Crashlytics (retained up to 90 days by Google)</li>
-  <li>Anonymized analytics events already sent to Firebase Analytics (retained up to 14 months by Google)</li>
+  <li>Notifications saved on your device, when you delete only the cloud account</li>
+  <li>Crash reports already sent to Firebase Crashlytics (kept up to 90 days by Google). They contain no notification content.</li>
+  <li>Analytics events already sent to Firebase Analytics (kept up to 14 months by Google). They contain no notification content.</li>
   <li>Google Play purchase records (managed by Google, not us)</li>
 </ul>
+
+<p>Full details: <a href="./">Privacy Policy</a>.</p>
 
 </body>
 </html>

@@ -8,6 +8,8 @@
     body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
     h1 { color: #1a1a1a; }
     h2 { color: #444; margin-top: 2em; }
+    h3 { color: #444; }
+    a { color: #1a73e8; }
   </style>
 </head>
 <body>
@@ -15,52 +17,72 @@
 <h1>Privacy Policy</h1>
 <p><strong>App:</strong> Nothi – Notification History<br>
 <strong>Package:</strong> com.nothi.app<br>
-<strong>Last updated:</strong> May 9, 2026</p>
+<strong>Effective date:</strong> October 17, 2026</p>
 
-<h2>1. Data We Collect</h2>
-<p>Nothi reads notification content (title, text, app name, timestamp) from your device to build a searchable history. This data is:</p>
+<p>This policy explains what data the Nothi: Notification History Android app ("Nothi", "the app") handles, where it goes, and how you can delete it. "We" and "us" refer to the developer of Nothi.</p>
+
+<h2>1. Notifications you capture</h2>
+<p>Nothi saves the notifications your phone receives so you can find them later. To do this it needs Android's <strong>Notification access</strong> permission, which you grant yourself in system settings and can revoke at any time.</p>
+<p>For each notification Nothi stores: the app name and package name, title, text, expanded text, time, a category the app assigns, links found in the text, and whether the notification contained a one-time code (OTP). <strong>OTP codes themselves are never written to storage</strong>; Nothi only shows them in a temporary alert while the notification is fresh.</p>
+<p>This data is stored in the app's private storage on your device. It is not encrypted by Nothi beyond the protection Android itself gives app storage.</p>
+<p>Nothi does not send your notifications anywhere unless you turn on Cloud Sync (section 2).</p>
+
+<h2>2. Cloud Sync (optional, Premium)</h2>
+<p>Cloud Sync is off by default. If you turn it on in Settings and sign in with your Google account:</p>
 <ul>
-  <li>Stored <strong>locally on your device</strong> only (Room database)</li>
-  <li><strong>Never transmitted</strong> to our servers</li>
-  <li>Never shared with third parties</li>
+  <li>The notification data described in section 1 (except OTP codes) is uploaded to <strong>Google Firebase (Cloud Firestore)</strong> and stored under your Google account, so you can restore it on another device.</li>
+  <li>Firebase Authentication receives your Google account identifier and email address to sign you in.</li>
+  <li>Data is sent over an encrypted (HTTPS/TLS) connection.</li>
 </ul>
-<p>Sensitive content such as OTP codes is intentionally discarded and never stored.</p>
+<p>You can turn Cloud Sync off and sign out at any time. To delete the data already uploaded, see section 6.</p>
 
-<h2>2. Permissions Used</h2>
+<h2>3. Analytics, performance and crash reports</h2>
+<p>Nothi uses these Google Firebase services on every install:</p>
 <ul>
-  <li><strong>Notification Listener</strong> — required to read and store notification history. You must explicitly grant this in Android Settings.</li>
-  <li><strong>Internet</strong> — used for ads (AdMob) and crash reporting (Firebase Crashlytics).</li>
-  <li><strong>Billing</strong> — used for in-app purchases (monthly, yearly, lifetime premium).</li>
+  <li><strong>Firebase Analytics</strong> — which screens and features are used (for example a category name you selected, the length of a search, the plan you viewed). Search text and notification content are never sent.</li>
+  <li><strong>Firebase Performance Monitoring</strong> — app start time, screen rendering and network performance.</li>
+  <li><strong>Firebase Crashlytics</strong> — crash reports with technical details (device model, Android version, stack trace). Crash reports do not include notification content.</li>
 </ul>
+<p>These services also collect device and app identifiers (such as the Firebase installation ID) as described in Google's policies.</p>
 
-<h2>3. Third-Party Services</h2>
-<p>We use the following third-party services that may collect limited data:</p>
+<h2>4. Ads (free plan only)</h2>
+<p>The free plan shows ads from <strong>Google AdMob</strong>. AdMob may use your device's advertising ID, IP address and general device information to show and measure ads. You can reset or delete your advertising ID in Android settings. Premium users do not see ads.</p>
+
+<h2>5. Purchases</h2>
+<p>Premium subscriptions and purchases are processed by <strong>Google Play Billing</strong>. We receive the purchase status needed to unlock Premium; we never receive your payment details.</p>
+
+<h2>6. Keeping and deleting your data</h2>
 <ul>
-  <li><strong>Google AdMob</strong> — displays ads to free-tier users. AdMob may collect device advertising ID and usage data. See <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
-  <li><strong>Firebase Analytics</strong> — collects anonymous usage events (e.g., feature usage, session length). No personally identifiable information is collected.</li>
-  <li><strong>Firebase Crashlytics</strong> — collects crash reports including device model, OS version, and stack traces. No notification content is included in crash reports.</li>
-  <li><strong>Google Play Billing</strong> — handles premium subscription and purchase verification. Payment data is processed entirely by Google.</li>
+  <li><strong>On your device:</strong> notifications are kept for the retention period you choose in Settings and within the storage limit of your plan. You can delete individual notifications or all of them in the app. Uninstalling the app deletes all data stored on the device.</li>
+  <li><strong>In the cloud (Cloud Sync):</strong> see "Delete your account and cloud data" below.</li>
 </ul>
 
-<h2>4. Data Retention & Deletion</h2>
-<p>All notification data is stored locally on your device. You can delete all data at any time by:</p>
+<h3 id="delete">Delete your account and cloud data</h3>
+<p>Deleting your Cloud Sync account permanently removes all notifications synced to the cloud and the account itself. Nothing is kept afterwards. Notifications saved on your device are not affected.</p>
 <ul>
-  <li>Clearing app data via Android Settings → Apps → Nothi → Clear Data</li>
-  <li>Uninstalling the app</li>
+  <li><strong>In the app:</strong> open <strong>Settings → Cloud Sync → Delete cloud data &amp; account</strong>, confirm, and choose the Google account you used. This works with or without Premium.</li>
+  <li><strong>Without the app:</strong> email <a href="mailto:nothiapp@gmail.com?subject=Delete%20my%20Nothi%20data">nothiapp@gmail.com</a> from the Google account you used, with the subject "Delete my Nothi data". We delete the account and all its synced data within 30 days and confirm by email.</li>
 </ul>
-<p>Free-tier users: notifications older than 30 days are automatically deleted.<br>
-Premium users: configurable retention (7 / 30 / 90 / 365 days or unlimited).</p>
+<p>More details: <a href="delete-data.html">Data deletion</a>.</p>
 
-<h2>5. Children's Privacy</h2>
-<p>Nothi is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
+<h2>7. Permissions</h2>
+<ul>
+  <li><strong>Notification access</strong> — to read and save incoming notifications (section 1).</li>
+  <li><strong>Post notifications</strong> — to show OTP alerts, Smart Alerts and app reminders.</li>
+  <li><strong>Ignore battery optimizations</strong> (optional) — so Android does not stop the capture service in the background.</li>
+  <li><strong>Internet / network state</strong> — for Cloud Sync, analytics, ads and purchases.</li>
+</ul>
 
-<h2>6. Data Security</h2>
-<p>All notification data remains on your device and is protected by Android's application sandboxing. We do not have access to your notification data.</p>
+<h2>8. Sharing and selling</h2>
+<p>We do not sell your data. Data is shared only with the Google services named above, which process it on our behalf under their own terms: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.</p>
 
-<h2>7. Changes to This Policy</h2>
-<p>We may update this policy. Continued use of the app after changes constitutes acceptance of the new policy.</p>
+<h2>9. Children</h2>
+<p>Nothi is not directed at children under 13, and we do not knowingly collect their data.</p>
 
-<h2>8. Contact</h2>
+<h2>10. Changes</h2>
+<p>If this policy changes, we will update the effective date above and, for significant changes, tell you in the app.</p>
+
+<h2>11. Contact</h2>
 <p>Questions or requests: <a href="mailto:nothiapp@gmail.com">nothiapp@gmail.com</a></p>
 
 </body>
